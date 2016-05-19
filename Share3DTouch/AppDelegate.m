@@ -16,9 +16,55 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    //创建3dtouch标签
+    [self createShortItems];
+    
+    
     return YES;
 }
+
+#pragma mark ---创建标签items
+- (void)createShortItems {
+    //UIApplicationShortcutItem , 标签,最多有4个
+    //UIApplicationShortcutItemType , 唯一标识的属性(必填)
+    //UIApplicationShortcutItemTitle , 标题, (必填)
+    //UIApplicationShortcutItemSubtitle , 二级标题
+    //UIApplicationShortcutItemIconType , 显示的图标, 可以是自定义的,也可以是系统的
+    //UIApplicationShortcutItemIconUserInfo, 包含一些其他信息
+    
+    
+    //创建标签
+    //创建标签的icon图标
+    UIApplicationShortcutIcon *icon1 = [UIApplicationShortcutIcon iconWithType:(UIApplicationShortcutIconTypeLove)];
+    UIApplicationShortcutItem *item1 = [[UIApplicationShortcutItem alloc] initWithType:@"A" localizedTitle:@"大表弟" localizedSubtitle:@"去哪了?" icon:icon1 userInfo:nil];
+    
+    UIApplicationShortcutIcon *icon2 = [UIApplicationShortcutIcon iconWithType:(UIApplicationShortcutIconTypeAdd)];
+    UIApplicationShortcutItem *item2 = [[UIApplicationShortcutItem alloc] initWithType:@"B" localizedTitle:@"小帅哥" localizedSubtitle:@"\(^o^)/~" icon:icon2 userInfo:nil];
+    
+    UIApplicationShortcutIcon *icon3 = [UIApplicationShortcutIcon iconWithTemplateImageName:@"icon3.png"];
+    UIApplicationShortcutItem *item3 = [[UIApplicationShortcutItem alloc] initWithType:@"C" localizedTitle:@"大帅比" localizedSubtitle:@"O(∩_∩)O哈哈~" icon:icon3 userInfo:nil];
+    
+    //将标签添加到application的shortitems
+    [UIApplication sharedApplication].shortcutItems = @[item1, item2, item3];
+    
+ 
+}
+
+//通过点击3dtouch标签会执行的方法
+- (void)application:(UIApplication *)application performActionForShortcutItem:(nonnull UIApplicationShortcutItem *)shortcutItem completionHandler:(nonnull void (^)(BOOL))completionHandler {
+    //判断从哪个标签进入应用程序
+    if ([shortcutItem.type isEqualToString:@"A"]) {
+        self.window.rootViewController.view.backgroundColor = [UIColor greenColor];
+    }else if ([shortcutItem.type isEqualToString:@"B"]) {
+        self.window.rootViewController.view.backgroundColor = [UIColor redColor];
+    }else if ([shortcutItem.type isEqualToString:@"C"]){
+        self.window.rootViewController.view.backgroundColor = [UIColor brownColor];
+    }
+
+}
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -15,6 +15,9 @@
 		B4717C681CE84D5700113A6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4717C661CE84D5700113A6E /* LaunchScreen.storyboard */; };
 		B4717C731CE84D5700113A6E /* Share3DTouchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B4717C721CE84D5700113A6E /* Share3DTouchTests.m */; };
 		B4717C7E1CE84D5700113A6E /* Share3DTouchUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B4717C7D1CE84D5700113A6E /* Share3DTouchUITests.m */; };
+		B4717C8C1CE851A000113A6E /* icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = B4717C8B1CE851A000113A6E /* icon3.png */; };
+		B4717C901CE85A5C00113A6E /* TouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4717C8E1CE85A5C00113A6E /* TouchViewController.m */; };
+		B4717C911CE85A5C00113A6E /* TouchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4717C8F1CE85A5C00113A6E /* TouchViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,10 @@
 		B4717C791CE84D5700113A6E /* Share3DTouchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Share3DTouchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4717C7D1CE84D5700113A6E /* Share3DTouchUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Share3DTouchUITests.m; sourceTree = "<group>"; };
 		B4717C7F1CE84D5700113A6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4717C8B1CE851A000113A6E /* icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon3.png; sourceTree = "<group>"; };
+		B4717C8D1CE85A5C00113A6E /* TouchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchViewController.h; sourceTree = "<group>"; };
+		B4717C8E1CE85A5C00113A6E /* TouchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchViewController.m; sourceTree = "<group>"; };
+		B4717C8F1CE85A5C00113A6E /* TouchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TouchViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +112,10 @@
 				B4717C5C1CE84D5700113A6E /* AppDelegate.m */,
 				B4717C5E1CE84D5700113A6E /* ViewController.h */,
 				B4717C5F1CE84D5700113A6E /* ViewController.m */,
+				B4717C8D1CE85A5C00113A6E /* TouchViewController.h */,
+				B4717C8E1CE85A5C00113A6E /* TouchViewController.m */,
+				B4717C8F1CE85A5C00113A6E /* TouchViewController.xib */,
+				B4717C8B1CE851A000113A6E /* icon3.png */,
 				B4717C611CE84D5700113A6E /* Main.storyboard */,
 				B4717C641CE84D5700113A6E /* Assets.xcassets */,
 				B4717C661CE84D5700113A6E /* LaunchScreen.storyboard */,
@@ -207,6 +218,7 @@
 				TargetAttributes = {
 					B4717C541CE84D5700113A6E = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 598P2RLPRZ;
 					};
 					B4717C6D1CE84D5700113A6E = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -243,7 +255,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4717C8C1CE851A000113A6E /* icon3.png in Resources */,
 				B4717C681CE84D5700113A6E /* LaunchScreen.storyboard in Resources */,
+				B4717C911CE85A5C00113A6E /* TouchViewController.xib in Resources */,
 				B4717C651CE84D5700113A6E /* Assets.xcassets in Resources */,
 				B4717C631CE84D5700113A6E /* Main.storyboard in Resources */,
 			);
@@ -272,6 +286,7 @@
 			files = (
 				B4717C601CE84D5700113A6E /* ViewController.m in Sources */,
 				B4717C5D1CE84D5700113A6E /* AppDelegate.m in Sources */,
+				B4717C901CE85A5C00113A6E /* TouchViewController.m in Sources */,
 				B4717C5A1CE84D5700113A6E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,10 +428,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Share3DTouch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.www.Share3DTouch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -424,10 +442,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Share3DTouch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.www.Share3DTouch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
